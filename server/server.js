@@ -34,11 +34,20 @@ app.get('/sendjson', (req, res) => {
 
 var urlencodedParser = bodyParser.urlencoded({ extended: true })
 
-const upload = multer({ dest: "./" });
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "./videos");
+    },
+    filename: (req, file, cb) => {
+        const { originalname } = file;
+        cb(null, originalname);
+    }
+})
+
+const upload = multer({ storage: storage });
 
 
-app.post("/addclip", upload.single('video'), (req, res) => {
-    console.log("test")
+app.post("/addclip", upload.single('video'), urlencodedParser, (req, res) => {
     return res.json({ status: 'OK' });
 });
 

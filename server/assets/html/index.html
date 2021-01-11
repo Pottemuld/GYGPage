@@ -15,8 +15,10 @@
             <span class="close">&times;</span>
             <h2>Upload Clip</h2>
             <h3>Show a file-select field which allows only one file to be chosen:</h3>
-            <form class="FormData" id="myform" method="POST" action="/addclip" enctype="multipart/form.data">
-                <input type="file" id="video" name="video"></input>
+            <form class="FormData" id="myform" method="POST" action="/addclip" enctype="multipart/form-data">
+                <label for="videotitle">Enter the title for your video;</label></br>
+                <input id="videotitle" type="text" name="title" required></br>
+                <input type="file" id="video" name="video" required></input>
                 <button type="submit">Upload</button>
             </form>
         </div>
