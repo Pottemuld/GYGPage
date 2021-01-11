@@ -51,6 +51,10 @@ app.post("/addclip", upload.single('video'), urlencodedParser, (req, res) => {
     return res.json({ status: 'OK' });
 });
 
+function updateList(title, videoPath) {
+
+}
+
 
 app.listen(2001, function() {
     console.log('Server is listening on port 2001');
