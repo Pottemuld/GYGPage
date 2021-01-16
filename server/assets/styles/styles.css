@@ -15,12 +15,13 @@ body {
 .videoElement {
     flex-basis: 45%;
     margin: 1rem;
-    background-color: rgba(56, 1, 70, 0.3);
+    background-color: rgba(102, 102, 102, 0.58);
     border-radius: 5%;
 }
 
 .videoDiv {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .videoElement h2 {
@@ -30,6 +31,11 @@ body {
 .videoElement video {
     width: 90%;
     text-align: center;
+}
+
+#videoTitle {
+    text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
+    font-size: xx-large;
 }
 
 a {
@@ -81,8 +87,6 @@ a {
 /* The Modal (background) */
 
 .modal {
-    display: none;
-    /* Hidden by default */
     position: fixed;
     /* Stay in place */
     z-index: 1;
@@ -105,8 +109,13 @@ a {
 /* Modal Content/Box */
 
 .modal-content {
-    background-color: #fefefe;
-    color: white;
+    
+    display: flex;
+    /* Hidden by default */
+
+    flex-direction:row;
+    color:  #E57200;
+    font-weight: 900;
     margin: 15% auto;
     /* 15% from the top and centered */
     padding: 20px;
@@ -141,4 +150,42 @@ a {
     background-image: url(../images/modalbackground.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+}
+
+#modal-right {
+    font-size: xx-large;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    max-width: 50%;
+    text-align: center;
+    align-content: right;
+    flex: 1;
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: 2rem;
+}
+
+#modal-left {
+    font-size: x-large;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    max-width: 40%;
+    text-align: center;
+    align-content: left;
+    flex: 1;    
+    margin-right: auto;
+    margin-left: 0;
+    padding-left: 2rem;
+}
+
+.spacing {
+    margin: 1rem;
+}
+
+input[type="file"] {
+    max-width: 13rem;
+    font-weight: 900;
+    border-color: black;
+}
+
+#upload-btn {
+    width: 10rem;
 }
