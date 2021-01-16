@@ -16,15 +16,10 @@ app.get('/', (req, res) => {
 
 });
 
-app.get('/gifs', (req, res) => {
-    res.sendFile(path.resolve('../untitled/server/assets/html/index.html'));
-
-});
-
 app.get('/sendjson', (req, res) => {
     //console.log("server requested for json");
 
-    let file = JSON.parse(fs.readFileSync(path.resolve(__dirname, './videos.json')));
+    let file = JSON.parse(fs.readFileSync(path.join(__dirname, './videos.json')));
 
     //console.log(JSON.stringify(file));
 
