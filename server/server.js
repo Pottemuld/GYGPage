@@ -39,8 +39,8 @@ const storage = multer.diskStorage({
         cb(null, "./videos");
     },
     filename: (req, file, cb) => {
-        const { originalname } = file;
-        cb(null, originalname);
+        console.log("title = " + req.body.title);
+        cb(null, (req.body.title + ".mp4"));
     }
 })
 
@@ -48,11 +48,24 @@ const upload = multer({ storage: storage });
 
 
 app.post("/addclip", upload.single('video'), urlencodedParser, (req, res) => {
-    return res.json({ status: 'OK' });
+    updateList(req.body.title);
+    return res.redirect("/");
 });
 
-function updateList(title, videoPath) {
+function updateList(title) {
+    let file = JSON.parse(fs.readFileSync("./videos.json"));
 
+    let newVideo = {};
+
+    newVideo.title = title;
+    newVideo.localPath = path.join("./videos/" + (title + ".mp4"));
+
+    file.push(newVideo);
+
+    console.log(file);
+
+    fs.writeFileSync("videos.json", JSON.stringify(file));
+    return true;
 }
 
 

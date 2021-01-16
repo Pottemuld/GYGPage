@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 
+<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+
 <head>
     <title>GifYourGame By Fisker</title>
     <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
@@ -11,14 +13,14 @@
     </div>
     <div id="myModal" class="modal">
 
-        <div class="modal-content">
+        <div id="modalbackground" class="modal-content">
             <span class="close">&times;</span>
-            <h2>Upload Clip</h2>
-            <h3>Show a file-select field which allows only one file to be chosen:</h3>
+            <h2 class="outline">Upload Clip</h2>
+            <h3 class="outline">Show a file-select field which allows only one file to be chosen:</h3>
             <form class="FormData" id="myform" method="POST" action="/addclip" enctype="multipart/form-data">
                 <label for="videotitle">Enter the title for your video;</label></br>
                 <input id="videotitle" type="text" name="title" required></br>
-                <input type="file" id="video" name="video" required></input>
+                <input type="file" id="video" name="video" accept="video/mp4" required></input>
                 <button type="submit">Upload</button>
             </form>
         </div>
