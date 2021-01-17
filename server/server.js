@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
 
 });
 
+app.get('/designs', (req, res) => {
+    res.sendFile("./assets/html/designs.html", { root: __dirname });
+
+});
+
 app.get('/sendjson', (req, res) => {
     //console.log("server requested for json");
 
