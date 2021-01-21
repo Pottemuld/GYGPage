@@ -3,9 +3,22 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 
+
 <head>
     <title>GifYourGame By Fisker</title>
+
     <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <div id="navbar-placeholder"></div>
+    <script>
+        $(function() {
+            $("#navbar-placeholder").load("./nav_foot/navbar.html");
+            $("#footer-placeholder").load("./nav_foot/footer.html");
+        });
+    </script>
+
+
     <div class="centering">
         <div class="rocketleague-2 rlbutton">
             <a id="modalBtn">Upload new clip</a>
@@ -19,15 +32,17 @@
                 <form class="FormData" id="myform" method="POST" action="/addclip" enctype="multipart/form-data">
                     <label for="videotitle">Enter the title for your video:</label> </br>
                     <input id="videotitle" class="spacing" type="text" name="title" required></br>
-                    <input type="file" class="spacing" id="video" name="video" accept="video/mp4" required></input></br>
+                    <input type="file" class="spacing" id="video" name="video" accept="video/mp4" required></input>
+                    </br>
                     <button id="upload-btn" type="submit" class="spacing">Upload</button>
                 </form>
             </div>
             <div id="modal-right">
                 <span class="close">&times;</span>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </br> </p>
+                    </br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </br>
+                </p>
             </div>
         </div>
     </div>
@@ -92,17 +107,17 @@
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks on the button, open the modal
-        btn.onclick = function () {
+        btn.onclick = function() {
             modal.style.display = "block";
         }
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
+        span.onclick = function() {
             modal.style.display = "none";
         }
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
+        window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
@@ -115,5 +130,9 @@
     <div id="flexbox">
     </div>
 </body>
+
+<footer>
+    <div id="footer-placeholder"></div>
+</footer>
 
 </html>
