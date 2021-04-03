@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "Index",
+  created() {
+    document.title = "GYG";
+  },
 };
 </script>
 

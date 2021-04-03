@@ -3,7 +3,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "designs",
+  created() {
+    document.title = "GYG - Designs";
+  },
+};
 </script>
 
 <style>

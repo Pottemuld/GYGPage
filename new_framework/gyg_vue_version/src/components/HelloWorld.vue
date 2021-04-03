@@ -11,6 +11,9 @@
 export default {
   name: "HelloWorld",
   props: {},
+  created() {
+    document.title = "GYG - Contact";
+  },
 };
 </script>
 
