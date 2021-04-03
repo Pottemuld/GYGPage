@@ -1,10 +1,10 @@
 <template>
   <div class="topnav" id="mytopnav">
-    <a>Home</a>
-    <a>designs</a>
-    <a>Contact</a>
+    <router-link to="/">Home</router-link>
+    <router-link to="/designs">Designs</router-link>
+    <router-link to="/contact">Contact</router-link>
     <div class="topnav-centered">
-      <a>GIF Your Game - Lasse Fisker</a>
+      <router-link to="/">GIF Your Game - Lasse Fisker</router-link>
     </div>
   </div>
 </template>
